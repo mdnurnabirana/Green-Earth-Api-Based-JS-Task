@@ -7,6 +7,8 @@
     <!-- Tailwind & DaisyUI CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/08114a201b.js" crossorigin="anonymous"></script>
     <!-- External CSS -->
     <link rel="stylesheet" href="./style/styles.css">
     <title>Green-Earth</title>
@@ -57,21 +59,45 @@
         <!-- Seection Title -->
         <h1 class="text-center text-[#1F2937] text-2xl font-bold">Choose Your Trees</h1>
         <!-- Content -->
-        <section class="grid grid-cols-12 justify-between mt-10">
+        <section class="grid grid-cols-12 gap-x-3 justify-between mt-10">
             <!-- Categories -->
             <div class="col-span-2">
                 <h2 class="font-semibold text-xl">Categories</h2>
                 <div id="category-sidebar" class="text-[#1F2937] mt-4">
                     <p class="font-medium mt-1 p-1">All Tress</p>
+                    <!-- Dynamic categories will take place -->
                 </div>
             </div>
             <!-- Card Container Box -->
-            <div class="col-span-8">
-
+            <div id="card-container-box" class="col-span-8 grid grid-cols-3 gap-7">
+                <!-- Dynamic tree Cards will Place here -->
+                
+                
             </div>
             <!-- Cart -->
-            <div class="col-span-2">
-
+            <div class="col-span-2 p-4 bg-white rounded-lg">
+                <h2 class="text-lg font-bold">Your Cart</h2>
+                
+                <div class="mt-4">
+                    <div class="bg-[#F0FDF4FF] rounded-xl p-3">
+                        <h2 class="font-semibold text-sm">Cart is Empty!</h2>
+                    </div>
+                    <div id="cart-items">
+                        <div class="flex justify-between items-center bg-[#F0FDF4FF] rounded-xl p-3 mt-2">
+                            <div>
+                                <h3 class="font-semibold text-sm mb-2">Name</h3>
+                                <p class="text-[#1F2937FF] text-sm font-medium">$<span>500</span> x <span>5</span></p>
+                            </div>
+                            <div class="font-medium text-sm text-[#1F2937FF]">
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex justify-between items-center p-3">
+                        <h3 class="font-semibold text-sm">Total: </h3>
+                        <p class="text-[#1F2937FF] text-sm font-medium">$ <span>100</span></p>
+                    </div>
+                </div>
             </div>
         </section>
     </section>
