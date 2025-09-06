@@ -24,11 +24,14 @@ const loadCategories = async () => {
 // Load all tress
 const loadAllPlants = async () => {
     try {
+        showLoader();
+        cardCont.innerHTML = ""; 
         const res = await fetch('https://openapi.programming-hero.com/api/plants');
         const data = await res.json();
 
         const plants = data.plants;
-
+        cardCont.innerHTML = "";
+        
         plants.forEach(plant => {
             cardCont.innerHTML += `
                 <div class="p-4 bg-white rounded-lg">
@@ -45,6 +48,7 @@ const loadAllPlants = async () => {
                 </div>
             `;
         });
+        hideLoader();
     }
     catch (error) {
         console.log(error);
@@ -54,6 +58,7 @@ const loadAllPlants = async () => {
 // Load by Categories
 const loadPlantByCategories =  async (id) => {
     try {
+        showLoader();
         if (id === "0") {
             loadAllPlants();
             return;
@@ -81,6 +86,7 @@ const loadPlantByCategories =  async (id) => {
                 </div>
             `;
         });
+        hideLoader();
     }
     catch (error) {
         console.log(error);
@@ -122,6 +128,12 @@ const openModal = (plant) => {
     const modal = document.getElementById('my_modal_1');
     modal.showModal();
 }
+
+// Loading animation
+const loader = document.getElementById('loader');
+
+const showLoader = () => loader.classList.remove('hidden');
+const hideLoader = () => loader.classList.add('hidden');
 
 loadCategories()
 loadAllPlants()
