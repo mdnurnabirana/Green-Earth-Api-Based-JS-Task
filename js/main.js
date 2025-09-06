@@ -25,13 +25,13 @@ const loadCategories = async () => {
 const loadAllPlants = async () => {
     try {
         showLoader();
-        cardCont.innerHTML = ""; 
+        cardCont.innerHTML = "";
         const res = await fetch('https://openapi.programming-hero.com/api/plants');
         const data = await res.json();
 
         const plants = data.plants;
         cardCont.innerHTML = "";
-        
+
         plants.forEach(plant => {
             cardCont.innerHTML += `
                 <div class="p-4 bg-white rounded-lg">
@@ -43,7 +43,7 @@ const loadAllPlants = async () => {
                         <p class="font-bold">$ <span>${plant.price}</span></p>
                     </div>
                     <div>
-                        <button class="rounded-3xl bg-[#15803D] text-white mt-4 w-full py-2 text-sm">Add to Cart</button>
+                        <button class="rounded-3xl bg-[#15803D] text-white mt-4 w-full py-2 text-sm" onclick="addToCart('${plant.name}', ${plant.price})">Add to Cart</button>
                     </div>
                 </div>
             `;
@@ -56,7 +56,7 @@ const loadAllPlants = async () => {
 }
 
 // Load by Categories
-const loadPlantByCategories =  async (id) => {
+const loadPlantByCategories = async (id) => {
     try {
         showLoader();
         if (id === "0") {
@@ -82,7 +82,7 @@ const loadPlantByCategories =  async (id) => {
                         <a href="#" class="px-3 py-2 bg-[#DCFCE7] font-medium text-sm rounded-3xl">${plant.category}</a>
                         <p class="font-bold">$ <span>${plant.price}</span></p>
                     </div>
-                    <button class="rounded-3xl bg-[#15803D] text-white mt-4 w-full py-2 text-sm">Add to Cart</button>
+                    <button class="rounded-3xl bg-[#15803D] text-white mt-4 w-full py-2 text-sm" onclick="addToCart('${plant.name}', ${plant.price})">Add to Cart</button>
                 </div>
             `;
         });
@@ -134,6 +134,54 @@ const loader = document.getElementById('loader');
 
 const showLoader = () => loader.classList.remove('hidden');
 const hideLoader = () => loader.classList.add('hidden');
+
+// Cart functionality
+let cartTotalValue = 0;
+const cartTotal = document.getElementById("cart-total");
+cartTotal.innerText = cartTotalValue;
+
+const cartCont = document.getElementById("cart-items");
+
+const emptyMsg = document.getElementById("empty-msg");
+
+const addToCart = (name, price) => {
+    showToast(`${name} added to cart successfully!`);
+    cartTotalValue += price;
+    cartTotal.innerText = cartTotalValue;
+    emptyMsg.style.display = cartTotalValue === 0 ? 'block' : 'none';
+    cartCont.innerHTML += `
+        <div class="flex justify-between items-center bg-[#F0FDF4FF] rounded-xl p-3 mt-2">
+            <div>
+                <h3 class="font-semibold text-sm mb-2">${name}</h3>
+                <p class="text-[#1F2937FF] text-sm font-medium">$<span>${price}</span> x <span>1</span></p>
+            </div>
+            <div class="font-medium text-sm text-[#1F2937FF] cursor-pointer" onclick="this.parentElement.remove(); updateCartTotal(${price});">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+    `;
+}
+
+// Update Cart Price
+function updateCartTotal(price) {
+    showToast(`Item removed successfully`);
+    cartTotalValue -= price;
+    cartTotal.innerText = cartTotalValue;
+    emptyMsg.style.display = cartTotalValue === 0 ? 'block' : 'none';
+}
+
+// Toast Alert
+const showToast = (message) => {
+    const toastContainer = document.getElementById("toast-container");
+    const toastText = document.getElementById("toast-text");
+
+    toastText.innerText = message;
+    toastContainer.classList.remove("hidden");
+
+    setTimeout(() => {
+        toastContainer.classList.add("hidden");
+    }, 3000);
+}
 
 loadCategories()
 loadAllPlants()

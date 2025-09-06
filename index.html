@@ -90,23 +90,15 @@
                 <h2 class="text-lg font-bold">Your Cart</h2>
 
                 <div class="mt-4">
-                    <div class="bg-[#F0FDF4FF] rounded-xl p-3">
+                    <div id="empty-msg" class="bg-[#F0FDF4FF] rounded-xl p-3">
                         <h2 class="font-semibold text-sm">Cart is Empty!</h2>
                     </div>
                     <div id="cart-items">
-                        <div class="flex justify-between items-center bg-[#F0FDF4FF] rounded-xl p-3 mt-2">
-                            <div>
-                                <h3 class="font-semibold text-sm mb-2">Name</h3>
-                                <p class="text-[#1F2937FF] text-sm font-medium">$<span>500</span> x <span>5</span></p>
-                            </div>
-                            <div class="font-medium text-sm text-[#1F2937FF]">
-                                <i class="fa-solid fa-xmark"></i>
-                            </div>
-                        </div>
+                        <!-- Cart Items will be Added Here -->
                     </div>
                     <div class="mt-4 flex justify-between items-center p-3">
                         <h3 class="font-semibold text-sm">Total: </h3>
-                        <p class="text-[#1F2937FF] text-sm font-medium">$ <span>100</span></p>
+                        <p class="text-[#1F2937FF] text-sm font-medium">$ <span id="cart-total"></span></p>
                     </div>
                 </div>
             </div>
@@ -138,6 +130,18 @@
             </div>
         </div>
     </dialog>
+
+    <!-- Toastr -->
+    <div id="toast-container" class="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 hidden">
+        <div id="toast-msg" role="alert" class="alert alert-success flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span id="toast-text"></span>
+        </div>
+    </div>
 
     <!-- External Js -->
     <script src="./js/main.js"></script>
