@@ -183,5 +183,18 @@ const showToast = (message) => {
     }, 3000);
 }
 
+// Hamburger Menu Functionality
+const mobileMenu = document.getElementById("mobile-menu");
+const hamburgerBtn = document.getElementById("hamburger-btn");
+const barsIcon = document.getElementById("bars-icon");
+const xIcon = document.getElementById("xmark-icon");
+
+hamburgerBtn.addEventListener("click", () => {
+    barsIcon.classList.toggle("hidden");
+    xIcon.classList.toggle("hidden");
+    mobileMenu.classList.toggle("hidden");
+});
+
+
 loadCategories()
 loadAllPlants()
