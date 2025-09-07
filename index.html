@@ -58,11 +58,83 @@
         </div>
     </header>
 
+    <!-- Tree Plant Form Section -->
+    <section class="mt-24 bg-[#166534] py-12 px-4 sm:px-6 lg:px-0">
+        <h1 class="font-semibold text-white text-center text-3xl mb-6">
+            Plant a Tree Today
+        </h1>
 
+        <div class="bg-[#15803D] rounded-xl max-w-md w-full mx-auto p-6 sm:p-8">
+            <form action="#" class="flex flex-col gap-4">
+                <input type="text" placeholder="Your Name" class="input input-bordered w-full" />
+                <input type="email" placeholder="Your Email Address" class="input input-bordered w-full" />
+                <select name="number-of-trees" id="number-of-trees" class="input input-bordered w-full" required>
+                    <option value="" disabled selected>Select number of trees</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <button
+                    class="bg-[#FACC15] text-[#15803D] font-medium text-center py-2 rounded-3xl hover:bg-yellow-400 transition-colors">
+                    Donate Now
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="text-white bg-[#14532D] text-center py-5">
+        <p>© 2025 Green Earth. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Modal -->
+    <dialog id="my_modal_1" class="modal">
+        <div class="modal-box max-w-lg">
+            <div class="p-4 space-y-4">
+                <h2 id="modal-name" class="text-2xl font-bold text-gray-800"></h2>
+                <div class="w-full h-60 overflow-hidden rounded-lg shadow">
+                    <img id="modal-image" src="" class="w-full h-full object-cover" alt="">
+                </div>
+                <h3 id="modal-category" class="text-lg font-semibold text-green-700"></h3>
+                <p class="text-base font-medium text-gray-700">
+                    <span class="font-semibold">Price: </span>
+                    $<span id="modal-price" class="font-bold text-gray-900"></span>
+                </p>
+                <p id="modal-description" class="text-sm leading-relaxed text-gray-600"></p>
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button
+                        class="btn btn-sm px-4 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 transition">
+                        Close
+                    </button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Toastr -->
+    <div id="toast-container" class="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 hidden">
+        <div id="toast-msg" role="alert" class="alert alert-success flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span id="toast-text"></span>
+        </div>
+    </div>
     <!-- External Js -->
     <!-- <script src="./js/main.js"></script> -->
     <script>
-        
+
 
     </script>
 </body>
