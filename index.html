@@ -132,22 +132,58 @@
     </section>
 
     <!-- Impact Section -->
-    <section class="mt-24 max-w-11/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-xl shadow-md text-center p-10">
-            <h1 class="text-[#15803D] font-semibold text-2xl mb-2">500K+</h1>
-            <h6 class="text-[#1F2937] font-medium">Trees Planted</h6>
-        </div>
+    <section class="mt-24 max-w-11/12 mx-auto">
+        <h2 class="text-center text-3xl font-bold mb-8">Our Impact</h2>
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-xl shadow-md text-center p-10">
+                <h1 class="text-[#15803D] font-semibold text-2xl mb-2">500K+</h1>
+                <h6 class="text-[#1F2937] font-medium">Trees Planted</h6>
+            </div>
 
-        <div class="bg-white rounded-xl shadow-md text-center p-10">
-            <h1 class="text-[#15803D] font-semibold text-2xl mb-2">120+</h1>
-            <h6 class="text-[#1F2937] font-medium">Communities Involved</h6>
-        </div>
+            <div class="bg-white rounded-xl shadow-md text-center p-10">
+                <h1 class="text-[#15803D] font-semibold text-2xl mb-2">120+</h1>
+                <h6 class="text-[#1F2937] font-medium">Communities Involved</h6>
+            </div>
 
-        <div class="bg-white rounded-xl shadow-md text-center p-10">
-            <h1 class="text-[#15803D] font-semibold text-2xl mb-2">30+</h1>
-            <h6 class="text-[#1F2937] font-medium">Countries Reached</h6>
+            <div class="bg-white rounded-xl shadow-md text-center p-10">
+                <h1 class="text-[#15803D] font-semibold text-2xl mb-2">30+</h1>
+                <h6 class="text-[#1F2937] font-medium">Countries Reached</h6>
+            </div>
+        </section>
+    </section>
+
+    <!-- Tree Plant Form Section -->
+    <section class="mt-24 bg-[#166534] py-12">
+        <h1 class="font-semibold text-white text-center text-3xl mb-6">
+            Plant a Tree Today
+        </h1>
+
+        <div class="bg-[#15803D] rounded-xl max-w-md mx-auto p-6">
+            <form action="#" class="flex flex-col">
+                <input type="text" placeholder="Your Name" class="input input-bordered mt-2 w-full" />
+                <input type="text" placeholder="Your Email Address" class="input input-bordered mt-2 w-full" />
+                <select name="number-of-trees" id="number-of-trees" class="input input-bordered mt-2 w-full" required>
+                    <option value="" disabled selected>Select number of trees</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <button class="bg-[#FACC15] text-center py-2 rounded-3xl mt-4 text-[#15803D font-medium]">Donate Now</button>
+            </form>
         </div>
     </section>
+
+    <!-- Footer Section -->
+    <footer class="text-white bg-[#14532D] text-center py-5">
+        <p>© 2025 Green Earth. All Rights Reserved.</p>
+    </footer>
 
     <!-- Modal -->
     <dialog id="my_modal_1" class="modal">
