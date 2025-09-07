@@ -76,7 +76,72 @@
             <img src="./assets/images/hero-leaf2.png" alt="leaf 2">
         </div>
     </section>
-    
+
+    <!-- Main Section -->
+    <section class="max-w-11/12 mx-auto mt-24">
+        <!-- Seection Title -->
+        <h1 class="text-center text-[#1F2937] text-2xl font-bold">Choose Your Trees</h1>
+
+        <div class="flex justify-between items-center h-16 mt-3 px-4 bg-white rounded-lg sm:hidden">
+            <!-- Category Icon -->
+            <div id="mobile-category-btn" class="flex items-center">
+                <button id="icon-category" class="text-black text-2xl focus:outline-none">
+                    <i class="fa-solid fa-list"></i>
+                </button>
+            </div>
+
+            <!-- Cart Icon -->
+            <div id="mobile-cart-btn" class="flex items-center">
+                <button id="icon-cart" class="text-black text-2xl focus:outline-none">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <section class="grid grid-cols-12 gap-x-3 justify-between mt-10 items-start">
+            <!-- Categories -->
+            <div id="mobile-category-container" class="col-span-12 sm:col-span-2 hidden sm:block mb-3 sm:mb-0 order-1">
+                <h2 class="font-semibold text-xl">Categories</h2>
+                <div id="category-sidebar" class="text-[#1F2937] mt-4">
+                    <p id="0" class="font-medium mt-1 p-2 bg-[#15803D] text-white rounded-lg cursor-pointer">All Tress
+                    </p>
+                    <!-- Dynamic categories will take place -->
+                </div>
+            </div>
+            <!-- Card Container Box -->
+            <div class="col-span-12 sm:col-span-8 order-2">
+                <!-- Loader -->
+                <div id="loader" class="flex justify-center items-center py-10 hidden">
+                    <span class="loading loading-dots loading-xl text-green-600"></span>
+                </div>
+
+                <!-- Cards -->
+                <div id="card-container-box" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:items-start">
+                    <!-- Dynamic tree cards will go here -->
+                </div>
+            </div>
+
+            <!-- Cart -->
+            <div id="mobile-cart-container" class="col-span-12 sm:col-span-2 p-4 bg-white rounded-lg hidden sm:block mb-3 sm:mb-0 order-1 sm:order-3">
+                <h2 class="text-lg font-bold">Your Cart</h2>
+
+                <div class="mt-4">
+                    <div id="empty-msg" class="bg-[#F0FDF4FF] rounded-xl p-3">
+                        <h2 class="font-semibold text-sm">Cart is Empty!</h2>
+                    </div>
+                    <div id="cart-items">
+                        <!-- Cart Items will be Added Here -->
+                    </div>
+                    <div class="mt-4 flex justify-between items-center p-3">
+                        <h3 class="font-semibold text-sm">Total: </h3>
+                        <p class="text-[#1F2937FF] text-sm font-medium">$ <span id="cart-total"></span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
     <!-- Campaign Section -->
     <section class="mt-24 max-w-11/12 mx-auto px-4 sm:px-6 lg:px-0">
         <h1 class="text-center text-3xl sm:text-4xl font-bold mb-8">About the Campaign</h1>
@@ -199,11 +264,7 @@
         </div>
     </div>
     <!-- External Js -->
-    <!-- <script src="./js/main.js"></script> -->
-    <script>
-
-
-    </script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

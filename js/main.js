@@ -195,6 +195,17 @@ hamburgerBtn.addEventListener("click", () => {
     mobileMenu.classList.toggle("hidden");
 });
 
+// Mobile - Category Functionality
+document.getElementById("icon-category").addEventListener("click", (e) => {
+    const parent = document.getElementById("mobile-category-container");
+    parent.classList.toggle("hidden");
+})
+
+// Mobile - Cart Functionality
+document.getElementById("icon-cart").addEventListener("click", (e) => {
+    const parent = document.getElementById("mobile-cart-container");
+    parent.classList.toggle("hidden");
+})
 
 loadCategories()
 loadAllPlants()
